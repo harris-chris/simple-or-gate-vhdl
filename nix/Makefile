@@ -34,14 +34,16 @@ CONFIG ?= config.mk
 SYN_FILES_REL = $(SYN_FILES) # $(patsubst %, ../%, $(SYN_FILES))
 INC_FILES_REL = $(INC_FILES) # $(patsubst %, ../%, $(INC_FILES))
 XCI_FILES_REL = $(XCI_FILES) # $(patsubst %, ../%, $(XCI_FILES))
+XDC_FILES_REL = $(XDC_FILES) # $(patsubst %, ../%, $(XCI_FILES))
 IP_TCL_FILES_REL = $(IP_TCL_FILES) # $(patsubst %, ../%, $(IP_TCL_FILES))
 
-ifdef XDC_FILES
-  XDC_FILES_REL = $(patsubst %, ../%, $(XDC_FILES))
-else
-  # XDC_FILES_REL = $(FPGA_TOP).xdc
-	XDC_FILES_REL =
-endif
+#ifdef XDC_FILES
+  ##XDC_FILES_REL = $(patsubst %, ../%, $(XDC_FILES))
+  #XDC_FILES_REL = $(patsubst %, xdc/%, $(XDC_FILES))
+#else
+  ## XDC_FILES_REL = $(FPGA_TOP).xdc
+	#XDC_FILES_REL =
+#endif
 
 ###################################################################
 # Main Targets
@@ -76,7 +78,7 @@ distclean: clean
 ###################################################################
 
 # project file
-%.xpr: $(XCI_FILES_REL) $(IP_TCL_FILES_REL) 
+%.xpr: $(XCI_FILES_REL) $(IP_TCL_FILES_REL) $(XDC_FILES_REL)
 	echo "create_project -force -part $(FPGA_PART) $*" > create_project.tcl
 	for x in $(SYN_FILES_REL); do echo "add_files -fileset sources_1 $$x" >> create_project.tcl; done
 	for x in $(XDC_FILES_REL); do echo "add_files -fileset constrs_1 $$x" >> create_project.tcl; done
