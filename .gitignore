@@ -1,0 +1,8 @@
+**/*.jou
+*.log
+*.cache/
+*.hw/
+*.user_files/
+*.runs/
+*.tcl
+
