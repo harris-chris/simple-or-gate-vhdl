@@ -1,0 +1,30 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:07 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Thu Oct 21 02:22:21 2021
+# Process ID: 56643
+# Current directory: /data/vap/vitis-nix-config
+# Command line: vivado -log ./logfiles/vivado/vivado.log -journal ./logfiles/vivado/vivado.jou
+# Log file: /data/vap/vitis-nix-config/./logfiles/vivado/vivado.log
+# Journal file: /data/vap/vitis-nix-config/./logfiles/vivado/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /data/vap/vitis-nix-config/thermostat.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+source thermostat.tcl
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top thermostat_simulation [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top thermostat_simulation [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+launch_simulation
+close_sim

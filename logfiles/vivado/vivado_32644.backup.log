@@ -1,0 +1,209 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:07 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Thu Oct 21 00:48:08 2021
+# Process ID: 32644
+# Current directory: /data/vap/vitis-nix-config
+# Command line: vivado -log ./logfiles/vivado/vivado.log -journal ./logfiles/vivado/vivado.jou
+# Log file: /data/vap/vitis-nix-config/./logfiles/vivado/vivado.log
+# Journal file: /data/vap/vitis-nix-config/./logfiles/vivado/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /data/vap/vitis-nix-config/thermostat.xpr
+WARNING: [filemgmt 56-3] Default IP Output Path : Could not find the directory '/data/vap/vitis-nix-config/thermostat.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/xilinx/Vivado/2021.1/data/ip'.
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+update_compile_order -fileset sources_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'thermostat_simulation'
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/data/vap/vitis-nix-config/thermostat.sim/sim_1/behav/xsim'
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/opt/xilinx/Vivado/2021.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'thermostat_simulation' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/data/vap/vitis-nix-config/thermostat.sim/sim_1/behav/xsim'
+xvhdl --incr --relax -prj thermostat_simulation_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/data/vap/vitis-nix-config/src/rtl/thermostat.vhdl" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'thermostat'
+INFO: [VRFC 10-163] Analyzing VHDL file "/data/vap/vitis-nix-config/src/rtl/thermostat_simulation.vhdl" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'thermostat_simulation'
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/data/vap/vitis-nix-config/thermostat.sim/sim_1/behav/xsim'
+xelab -wto 17f5697a1aec4b0aab2972ca1e057f38 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot thermostat_simulation_behav xil_defaultlib.thermostat_simulation -log elaborate.log
+Vivado Simulator v2021.1
+Copyright 1986-1999, 2001-2021 Xilinx, Inc. All Rights Reserved.
+Running: /opt/xilinx/Vivado/2021.1/bin/unwrapped/lnx64.o/xelab -wto 17f5697a1aec4b0aab2972ca1e057f38 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot thermostat_simulation_behav xil_defaultlib.thermostat_simulation -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling architecture behav of entity xil_defaultlib.thermostat [thermostat_default]
+Compiling architecture test of entity xil_defaultlib.thermostat_simulation
+grep: /etc/issue: No such file or directory
+grep: /etc/issue: No such file or directory
+Built simulation snapshot thermostat_simulation_behav
+
+****** Webtalk v2021.1 (64-bit)
+  **** SW Build 3247384 on Thu Jun 10 19:36:07 MDT 2021
+  **** IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+source /data/vap/vitis-nix-config/thermostat.sim/sim_1/behav/xsim/xsim.dir/thermostat_simulation_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/data/vap/vitis-nix-config/thermostat.sim/sim_1/behav/xsim/xsim.dir/thermostat_simulation_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Thu Oct 21 00:49:04 2021. For additional details about this file, please refer to the WebTalk help file at /opt/xilinx/Vivado/2021.1/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Thu Oct 21 00:49:04 2021...
+run_program: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 7844.699 ; gain = 0.000 ; free physical = 3544 ; free virtual = 10401
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/data/vap/vitis-nix-config/thermostat.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "thermostat_simulation_behav -key {Behavioral:sim_1:Functional:thermostat_simulation} -tclbatch {thermostat_simulation.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source thermostat_simulation.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'thermostat_simulation_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:12 ; elapsed = 00:00:10 . Memory (MB): peak = 7910.535 ; gain = 65.836 ; free physical = 3476 ; free virtual = 10344
+add_bp {/data/vap/vitis-nix-config/src/rtl/thermostat.vhdl} 20
+remove_bps -file {/data/vap/vitis-nix-config/src/rtl/thermostat.vhdl} -line 20
+set_property top thermostat [get_filesets sim_1]
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+set_property top thermostat [current_fileset]
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+update_compile_order -fileset sources_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'thermostat'
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/data/vap/vitis-nix-config/thermostat.sim/sim_1/behav/xsim'
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/opt/xilinx/Vivado/2021.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'thermostat' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/data/vap/vitis-nix-config/thermostat.sim/sim_1/behav/xsim'
+xvhdl --incr --relax -prj thermostat_vhdl.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/data/vap/vitis-nix-config/thermostat.sim/sim_1/behav/xsim'
+xelab -wto 17f5697a1aec4b0aab2972ca1e057f38 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot thermostat_behav xil_defaultlib.thermostat -log elaborate.log
+Vivado Simulator v2021.1
+Copyright 1986-1999, 2001-2021 Xilinx, Inc. All Rights Reserved.
+Running: /opt/xilinx/Vivado/2021.1/bin/unwrapped/lnx64.o/xelab -wto 17f5697a1aec4b0aab2972ca1e057f38 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot thermostat_behav xil_defaultlib.thermostat -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling architecture behav of entity xil_defaultlib.thermostat
+grep: /etc/issue: No such file or directory
+grep: /etc/issue: No such file or directory
+Built simulation snapshot thermostat_behav
+
+****** Webtalk v2021.1 (64-bit)
+  **** SW Build 3247384 on Thu Jun 10 19:36:07 MDT 2021
+  **** IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+source /data/vap/vitis-nix-config/thermostat.sim/sim_1/behav/xsim/xsim.dir/thermostat_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/data/vap/vitis-nix-config/thermostat.sim/sim_1/behav/xsim/xsim.dir/thermostat_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Thu Oct 21 02:08:00 2021. For additional details about this file, please refer to the WebTalk help file at /opt/xilinx/Vivado/2021.1/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Thu Oct 21 02:08:00 2021...
+run_program: Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 7966.707 ; gain = 0.000 ; free physical = 1066 ; free virtual = 9142
+INFO: [USF-XSim-69] 'elaborate' step finished in '5' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/data/vap/vitis-nix-config/thermostat.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "thermostat_behav -key {Behavioral:sim_1:Functional:thermostat} -tclbatch {thermostat.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source thermostat.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'thermostat_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 8019.539 ; gain = 52.832 ; free physical = 1065 ; free virtual = 9142
+run 100 ns
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 100 ns
+add_force {/thermostat/TARGET} -radix hex {ff 4ns}
+ERROR: [Simtcl 6-179] Couldn't add force for the following reason: Illegal value 'ff': Object size 7 does not match size of given value ff.
+add_force {/thermostat/TARGET} -radix hex {7 4ns}
+add_force {/thermostat/TARGET} -radix hex {7 4ns}
+add_force {/thermostat/TARGET} -radix hex {3 3ns}
+add_force {/thermostat/TARGET} -radix unsigned {7 3ns}
+run 100 ns
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 100 ns
+add_force {/thermostat/TARGET} -radix hex {3 3ns}
+run 100 ns
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+add_force {/thermostat/TARGET} -radix hex {3 3ns}
+run 100 ns
+add_force {/thermostat/SWITCH} -radix hex {1 21ns}
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 100 ns
+add_force {/thermostat/SWITCH} -radix bin {1 22ns}
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 100 ns
+current_wave_config {Untitled 2}
+Untitled 2
+remove_forces { {/thermostat/SWITCH} }
+add_force {/thermostat/SWITCH} -radix bin {1 21}
+run 100 ns
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 100 ns
+close_sim
+ERROR: [Vivado 12-106] *** Exception: java.lang.NullPointerException (See /data/vap/vitis-nix-config/vivado_pid32644.debug)
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 8151.809 ; gain = 0.000 ; free physical = 1319 ; free virtual = 9582
+ERROR: [Common 17-39] 'close_sim' failed due to earlier errors.
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 8151.809 ; gain = 0.000 ; free physical = 1324 ; free virtual = 9588
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Oct 21 02:22:01 2021...

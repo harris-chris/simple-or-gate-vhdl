@@ -1,0 +1,41 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:07 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Thu Oct 21 02:24:53 2021
+# Process ID: 57992
+# Current directory: /data/vap/vitis-nix-config
+# Command line: vivado -log ./logfiles/vivado/vivado.log -journal ./logfiles/vivado/vivado.jou
+# Log file: /data/vap/vitis-nix-config/./logfiles/vivado/vivado.log
+# Journal file: /data/vap/vitis-nix-config/./logfiles/vivado/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /data/vap/vitis-nix-config/thermostat.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+source thermostat_simulation.tcl
+restart
+run 100 ns
+current_wave_config {Untitled 1}
+add_wave {{/thermostat_simulation/TS}} 
+run 100 ns
+close_sim
+launch_simulation
+source thermostat_simulation.tcl
+current_wave_config {Untitled 2}
+add_wave {{/thermostat_simulation/TS}} 
+restart
+run 100 ns
+relaunch_sim
+restart
+run 100 ns
+relaunch_sim
+restart
+run 100 ns
+restart
+relaunch_sim
+restart
+run 100 ns
+restart
+relaunch_sim
+close_sim
